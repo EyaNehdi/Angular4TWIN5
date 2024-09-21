@@ -1,0 +1,13 @@
+<p>user works!</p>
+<div [style.color]="color">{{titre}}</div>
+<input (input)="onInputChange($event)">
+{{person.id}}
+{{person.name}}
+{{person.age}}
+<button [disabled]="quantity <= 0" (click)="buy()">Acheter</button>
+{{quantity}}
+<img [src]="imgsrc" [height]="height" [width]="width" >
+<input name="c" [(ngModel)]="color2">
+<p>{{color2}}</p>
+
+<button type="button" class="btn btn-primary">Test</button>

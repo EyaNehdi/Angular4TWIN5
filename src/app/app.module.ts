@@ -10,6 +10,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListCategoriesComponent } from './components/list-categories/list-categories.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
+
 
 @NgModule({
   declarations: [
@@ -19,15 +22,14 @@ import { HeaderComponent } from './components/header/header.component';
     FooterComponent,
     HomeComponent,
     ListCategoriesComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HeaderComponent,
-    HomeComponent,
-    FooterComponent
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

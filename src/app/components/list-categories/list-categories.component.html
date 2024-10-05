@@ -1,18 +1,18 @@
 <div class="container">
     <div class="row">
-        
+
         Search:<input class="form-control" style="margin-bottom: 30px;" name="title" [(ngModel)]="title">
         <ng-container *ngFor="let c of categories | filter:title">
-      <div  class="col-md-4" style="margin-bottom: 20px;"> 
+      <div  class="col-md-4" style="margin-bottom: 20px;">
         <!--*ngIf="title.toLowerCase()==c.title.toLowerCase() || title=='' "-->
-        
-            
+
+
         <img [src]="c.image" alt="c.title" class="img-fluid h-50 w-75" (click)="afficheDescription(c.id)">
         <h3>{{c.title | uppercase}}</h3>
-        <button  class="btn btn-primary" *ngIf="c.available == true">Voir produits</button>
+        <button  class="btn btn-primary" *ngIf="c.available == true" [routerLink]="['/products/',c.id]">Voir produits</button>
         <p *ngIf="c.available == false">Catégorie non disponible</p>
-    
-    </div> 
+
+    </div>
 </ng-container>
     </div>
   </div>

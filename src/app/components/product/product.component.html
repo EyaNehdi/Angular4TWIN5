@@ -1,2 +1,25 @@
-<p>product works!</p>
-{{id}}
+<div class="container" style="margin-top: 30px">
+  <div class="row">
+    <div class="alert alert-danger" *ngIf="list.length == 0">
+      <h2>Aucun Produit</h2>
+    </div>
+
+    <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list">
+      <img [src]="product.image" [alt]="product.name" class="img-fluid h-50 w-75">
+      <h3>{{product.name}}</h3>
+      <h3>{{product.price}}</h3>
+      <h3>{{product.nbLikes}}</h3>
+      <h3>{{product.quantity}}</h3>
+      <div class="row">
+        <div class="col-6">
+      <button type="button" class="btn btn-outline-primary" (click)="increment(product)">Like</button>
+      <button *ngIf="product.quantity==0;else elseBlock" type="button" class="btn btn-outline-secondary" (click)="buy(product)" disabled >Buy</button>
+      <ng-template #elseBlock>
+        <button  type="button" class="btn btn-outline-secondary" (click)="buy(product)" >Buy</button>
+      </ng-template>
+    </div>
+    </div>
+    </div>
+
+   </div>
+  </div>

@@ -32,8 +32,7 @@ import { ProductModule } from './features/product/product.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ProductModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

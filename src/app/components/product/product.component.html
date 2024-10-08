@@ -6,7 +6,7 @@
 
     <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list">
       <img [src]="product.image" [alt]="product.name" class="img-fluid h-50 w-75">
-      <h3>{{product.name}}</h3>
+      <h3 [ngClass]="product.nbLikes >= 10 ? 'clignote' : '' ">{{product.name}}</h3>
       <h3>{{product.price}}</h3>
       <h3>{{product.nbLikes}}</h3>
       <h3>{{product.quantity}}</h3>

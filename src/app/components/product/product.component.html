@@ -1,10 +1,16 @@
 <div class="container" style="margin-top: 30px">
   <div class="row">
+    <div class="form-group"> <label>Search  : </label>
+    <input type="text" class="form-control" name="filter" [(ngModel)]="search">
+  </div>
+
+  </div>
+  <div class="row">
     <div class="alert alert-danger" *ngIf="list.length == 0">
       <h2>Aucun Produit</h2>
     </div>
 
-    <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list">
+    <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list | filterProduct:search">
       <img [src]="product.image" [alt]="product.name" class="img-fluid h-50 w-75">
       <h3 [ngClass]="product.nbLikes >= 10 ? 'clignote' : '' ">{{product.name}}</h3>
       <h3>{{product.price}}</h3>

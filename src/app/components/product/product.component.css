@@ -1,6 +1,6 @@
 .clignote{
   color : red;
-  animation: clignote .8s;
+  animation: clignote .8s infinite;
 }
 @keyframes clignote {
 from {

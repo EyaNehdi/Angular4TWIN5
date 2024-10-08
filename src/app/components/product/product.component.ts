@@ -8,6 +8,7 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent {
+  search: string="";
   listProducts: Product[] = [
     {
       id: 1,

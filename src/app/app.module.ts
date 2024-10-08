@@ -13,7 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { ProductModule } from './features/product/product.module';
+
+
 
 
 @NgModule({

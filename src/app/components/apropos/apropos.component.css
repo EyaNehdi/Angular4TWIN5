@@ -1,0 +1,12 @@
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}

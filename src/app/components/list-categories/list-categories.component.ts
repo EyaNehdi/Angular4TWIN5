@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 
 @Component({
@@ -6,8 +7,9 @@ import { Categorie } from 'src/app/models/categorie';
   templateUrl: './list-categories.component.html',
   styleUrls: ['./list-categories.component.css']
 })
-export class ListCategoriesComponent 
+export class ListCategoriesComponent
 {
+
     title:string ='';
      categories: Categorie[] = [
   {"id":1,"title":"Grand électroménager",
@@ -39,4 +41,9 @@ this.categories.forEach(element=>{
     //filter
    /* let categorie = this.categories.filter(element=> element.id == id)[0]
     alert (category.description)*/
+
+    toUpdate(c: Categorie){
+console.log(JSON.stringify(c))
+this.router.navigate(['/category/update'])
+    }
 }

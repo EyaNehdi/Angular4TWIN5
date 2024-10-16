@@ -6,9 +6,12 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductModule } from './features/product/product.module';
 import { AproposModule } from './features/apropos/apropos.module';
 import { ContactModule } from './features/contact/contact.module';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
 
 const routes: Routes = [
   {path:"home",component:HomeComponent},
+  {path:'category/add',component:FormCategoryComponent},
+  {path:'category/update/:objet',component:FormCategoryComponent},
   {path:"",redirectTo:'/home', pathMatch:'full'},
   //Lazy loading "chunks"
   {path:'products',loadChildren:()=>import('./features/product/product.module').then((m)=>m.ProductModule)},

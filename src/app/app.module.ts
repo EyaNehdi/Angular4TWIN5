@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
 
 
 
@@ -28,7 +29,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HeaderComponent,
     FilterPipe,
     HighlightDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    FormCategoryComponent
   ],
   imports: [
     BrowserModule,

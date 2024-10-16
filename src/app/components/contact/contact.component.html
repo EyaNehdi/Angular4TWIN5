@@ -1,1 +1,47 @@
-<p>contact works!</p>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+          <h1 class="display-4">Contact Us</h1>
+          <p class="lead">We’re here to help and answer any question you might have. We look forward to hearing from
+              you.</p>
+      </div>
+  </div>
+
+  <div class="row mt-4">
+      <div class="col-md-6 mx-auto">
+          <form action="submit_form.php" method="POST">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" class="form-control" name="name" required>
+              </div>
+
+              <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" id="email" class="form-control" name="email" required>
+              </div>
+
+              <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" class="form-control" name="message" rows="5" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="row mt-5 text-center contact-info">
+      <div class="col-md-4">
+          <h5>Our Office</h5>
+          <p><i class="bi bi-geo-alt-fill"></i> Esprit, ghazella 2082</p>
+      </div>
+      <div class="col-md-4">
+          <h5>Call Us</h5>
+          <p><i class="bi bi-telephone-fill"></i> +1 234 567 890</p>
+      </div>
+      <div class="col-md-4">
+          <h5>Email Us</h5>
+          <p><i class="bi bi-envelope-fill"></i> support4twin5store.com</p>
+      </div>
+  </div>
+</div>

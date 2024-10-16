@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <form>
+    <div class="mb-3">
+      <label>Title : </label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="category.title">
+    </div>
+
+    <div class="mb-3">
+      <label>Image :</label>
+    <input type="text" class="form-control" name="image" [(ngModel)]="category.image">
+    </div>
+
+    <div class="mb-3">
+      <label>Description :</label>
+      <input type="text" class="form-control" name="description" [(ngModel)]="category.description">
+    </div>
+
+    <div class="mb-3">
+      <label>Available :</label>
+    <input type="checkbox" name="available" [(ngModel)]="category.available">
+    </div>
+
+    <div class="mb-3">
+      <input type="submit" class="btn btn-primary" value="Submit" (click)="add()">
+    </div>
+  </form>
+  </div>
+</div>

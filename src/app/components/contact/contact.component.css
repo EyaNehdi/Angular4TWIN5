@@ -1,0 +1,23 @@
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+i {
+  margin-right: 5px;
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 
 @Component({
@@ -9,7 +9,7 @@ import { Categorie } from 'src/app/models/categorie';
 })
 export class ListCategoriesComponent
 {
-
+constructor(private router:Router){}
     title:string ='';
      categories: Categorie[] = [
   {"id":1,"title":"Grand électroménager",
@@ -44,6 +44,6 @@ this.categories.forEach(element=>{
 
     toUpdate(c: Categorie){
 console.log(JSON.stringify(c))
-this.router.navigate(['/category/update'])
+this.router.navigate(['/category/update',JSON.stringify(c)])
     }
 }

@@ -18,6 +18,7 @@ import { FormCategoryComponent } from './components/form-category/form-category.
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { FormCategoryComponent } from './components/form-category/form-category.
     FilterPipe,
     HighlightDirective,
     NotFoundComponent,
-    FormCategoryComponent
+    FormCategoryComponent,
+
   ],
   imports: [
     BrowserModule,

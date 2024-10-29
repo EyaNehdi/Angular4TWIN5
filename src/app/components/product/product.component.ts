@@ -95,10 +95,12 @@ export class ProductComponent  implements OnInit , OnDestroy {
     this.id = this.activated.snapshot.params['id'];
     console.log('Snapshot method : ');
     console.log(this.activated.snapshot.params['id']);
+    //params.subscribe method
     console.log('params :');
     this.activated.params.subscribe({
       next: (p) => console.log(p['id']),
     });
+    //paramMap.subscribe method
     console.log('paramMap');
     this.activated.paramMap.subscribe({
       next: (p) => console.log(p.get('id')),

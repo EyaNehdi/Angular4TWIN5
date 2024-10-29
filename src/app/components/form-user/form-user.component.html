@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <form #f="ngForm">
+      <div class="mb-3">
+        <label>FirstName :</label>
+        <input class="form-control" name="firstName" [(ngModel)]="user.firstName"
+        #firstName="ngModel" required minlength="3" pattern="[a-zA-Z]*">
+        <div class="alert alert-danger" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+            <div *ngIf="firstName.errors!['required']">FirstName is required</div>
+            <div *ngIf="firstName.errors!['minlength']">FirstName must have at least 3 characters</div>
+            <div *ngIf="firstName.errors!['pattern']">First must have only characters</div>
+        </div>
+      </div>
+      <div class="mb3">
+        <label>LastName: </label>
+        <input class="form-control" name="LastName" [(ngModel)]="user.lastName" #lastName="ngModel"
+        required minlength="3" pattern="[a-zA-Z]">
+        <div class="alert alert-danger" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+          <div *ngIf="lastName.errors!['required']">Last name is required</div>
+          <div *ngIf="lastName.errors!['minlength']">Last Name must have at least 3 characters</div>
+          <div *ngIf="lastName.errors!['pattern']">Last Name must have only letters</div>
+        </div>
+
+      </div>
+      <div class="mb-3">
+        <label>Email :</label>
+        <input class="form-control" name="email" [(ngModel)]="user.email" #email="ngModel"
+            pattern="[a-zA-Z0-9._-]+@gmail.com">
+        <div class="alert alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+            <div *ngIf="email.errors!['pattern']">Email invalid</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>Password :</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel"
+            pattern="[A-Za-z0-9]{8,}?">
+        <div class="alert alert-danger" *ngIf="password.invalid && (password.touched || password.dirty)">
+            <div *ngIf="password.errors!['pattern']">Password invalid</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Submit" [disabled]="f.invalid">
+    </div>
+   
+  </form>
+  </div>
+</div>

@@ -20,7 +20,11 @@ ngOnInit(): void {
     }}
   })
 }
-add() {
+add(f:any , title:any) {
+  this.category.available=true;
   console.log(this.category);
+  console.log(f);
+  console.log(title);
+
 }
 }

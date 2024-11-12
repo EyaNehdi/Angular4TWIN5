@@ -1,0 +1,57 @@
+<input class="form-control" [formControl]="search">
+
+<form [formGroup]="product">
+    <div class="mb-3">
+        <label>Name :</label>
+        <input class="form-control" formControlName="name">
+        <div *ngIf="name.invalid &&
+        (name.touched ||
+        name.dirty)">Name is required</div>
+    </div>
+    <div class="mb-3">
+        <label>Image :</label>
+        <input class="form-control" formControlName="image">
+    </div>
+    <div class="mb-3">
+        <label>Description :</label>
+        <input class="form-control" formControlName="description">
+    </div>
+    <div class="mb-3">
+        <label>Price :</label>
+        <input class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3" formGroupName="brand">
+        <label>Brand Name :</label>
+        <input class="form-control" formControlName="name">
+        <div *ngIf="product.get('brand.name')?.invalid &&
+                (product.get('brand.name')?.touched ||
+                product.get('brand.name')?.dirty)">
+                <div *ngIf="product.get('brand.name')?.errors?.['required']">
+                    Brand Name is required
+                </div>
+                <div *ngIf="product.get('brand.name')?.errors?.['minlength']">
+                    Brand Name must have at least 3 characters
+                </div></div>
+        <label>Brand Logo :</label>
+        <input class="form-control" formControlName="logo">
+    </div>
+    <div class="mb-3">
+        <label>Promotion :</label>
+        <input class="form-control" formControlName="promotion">
+    </div>
+    <div class="mb-3">
+        <label>Quantity :</label>
+        <input class="form-control" formControlName="quantity">
+    </div>
+    <div class="mb-3" formArrayName="tags">
+        <label>Tags :</label>
+    <div *ngFor="let t of tags">
+        <input class="form-control" [formControl]="t">
+    </div>
+    <button (click)="addTags()">+</button>
+    </div>
+
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Add product" (click)="submit()">
+    </div>
+</form>

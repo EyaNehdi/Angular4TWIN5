@@ -1,47 +1,36 @@
 <div class="container">
   <div class="row">
-    <form #f="ngForm">
-    <div class="mb-3">
-      <label>Title : </label>
-      <input type="text" class="form-control" name="title" [(ngModel)]="category.title" required minlength="3" #title="ngModel">
+      <form #f="ngForm">
+      <div class="mb-3">
+          <label>Title : </label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="category.title" required minlength="3" #title="ngModel">
       Invalid : {{title.invalid}}<br>
       Touched : {{title.touched}}<br>
       Dirty : {{title.dirty}}<br>
       Errors : {{title.errors | json}}
       <div *ngIf="title.invalid && (title.touched || title.dirty)" class="alert alert-danger">
-        <div *ngIf="title.errors!['required']">Title is required !</div>
-        <div *ngIf="title.errors!['minlength']">Title must have at least 3 characters</div>
+          <div *ngIf="title.errors!['required']">Title is required !</div>
+          <div *ngIf="title.errors!['minlength']">Title must have at least 3 charachters</div>
       </div>
-    </div>
-
-    <div class="mb-3">
-      <label>Image :</label>
-    <input type="text" class="form-control" name="image" [(ngModel)]="category.image" required #image="ngModel">
-    Errors : {{image.errors | json}}
-    Invalid : {{image.invalid}}<br>
-      Touched : {{image.touched}}<br>
-      Dirty : {{image.dirty}}<br>
-    <div *ngIf="image.invalid && (image.touched || image.dirty)" class="alert alert-danger">
-    <div *ngIf="image.errors!['required']">Image is required !</div>
-    </div>
-</div>
-    <div class="mb-3">
-      <label>Description :</label>
-      <input type="text" class="form-control" name="description" [(ngModel)]="category.description" required minlength="10" #description="ngModel">
-      Errors : {{description.errors | json}}
-      Invalid : {{description.invalid}}<br>
-      Touched : {{description.touched}}<br>
-      Dirty : {{description.dirty}}<br>
+      </div>
+      <div class="mb-3">
+          <label>Image :</label>
+          <input type="text" class="form-control" name="image" [(ngModel)]="category.image" required #image="ngModel">
+      <div *ngIf="image.invalid && (image.touched || image.dirty)" class="alert alert-danger">
+          Image is required !
+      </div>
+      </div>
+      <div class="mb-3">
+          <label>Description :</label>
+          <input type="text" class="form-control" name="description" [(ngModel)]="category.description" required minlength="10" #description="ngModel">
       <div *ngIf="description.invalid && (description.touched || description.dirty)" class="alert alert-danger">
-    <div *ngIf="description.errors!['required']">Description is required !</div>
-    <div *ngIf="description.errors!['minlength']">Description must have at least 10 characters</div>
-    </div>
-</div>
-
-
-    <div class="mb-3">
+          <div *ngIf="description.errors!['required']">Description is required !</div>
+          <div *ngIf="description.errors!['minlength']">Description must have at least 10 charachters</div>
+      </div>
+      </div>
+      <div class="mb-3">
       <input type="submit" class="btn btn-primary" value="Submit" (click)="add(f,title)" [disabled]="f.invalid">
-    </div>
-  </form>
+      </div>
+      </form>
   </div>
 </div>

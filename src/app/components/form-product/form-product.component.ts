@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-product',
@@ -10,8 +10,26 @@ export class FormProductComponent implements OnInit {
 product!: FormGroup;
 
 search!: FormControl;
+constructor(private fb:FormBuilder){}
 ngOnInit(): void {
   this.search=new FormControl();
+    this.product = this.fb.group({
+      name:["Test",[Validators.required]],
+      image: [],
+      description: [],
+      price: [],
+      brand: this.fb.group({
+        name:["",[Validators.minLength(3),Validators.required]],
+        logo:[],
+      }),
+      promotion:[],
+      quantity: [],
+      nb_likes: [{value:'0',disabled:true}],
+      tags:this.fb.array([]),
+
+    })
+  
+ /* this.search=new FormControl();
   this.product= new FormGroup({
     name : new FormControl("Test",[Validators.required]),
     image:new FormControl(),
@@ -25,7 +43,7 @@ ngOnInit(): void {
   quantity:new FormControl(),
   nb_Likes: new FormControl({value:'0',disabled:true}),
   tags : new FormArray([new FormControl("")])
-  })
+  })*/
 }
 get name (){
   return this.product.get('name') as FormControl;

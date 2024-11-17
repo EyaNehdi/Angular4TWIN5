@@ -1,0 +1,10 @@
+{{title}}
+<div style="margin-bottom: 20px;">
+   <img [src]="data.image" [alt]="data.title" class="img-fluid h-50 w-75" >
+    <h3>{{data.title | uppercase}}</h3>
+    <button class="btn btn-primary" *ngIf="data.available == true" [routerLink]="['/products/',data.id]">Voir
+        produits</button>
+        <button class="btn btn-danger" (click)="deleteChild()">Delete</button>
+   <!-- <button class="btn btn-primary" (click)="toUpdate(c)">Update</button> -->
+    <p class="alert alert-danger" *ngIf="data.available == false">Catégorie non disponible</p>
+</div>

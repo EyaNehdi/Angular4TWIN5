@@ -2,12 +2,11 @@
   <div class="row">
 
       Search : <input class="form-control"
-      style="margin-bottom:30px" name="title" [(ngModel)]="title">
-      <button (click)="changeTest()">changeTest</button>
-      <ng-container *ngFor="let c of categories | filter:title">
+      style="margin-bottom:30px" name="name" [(ngModel)]="name">
+      <ng-container *ngFor="let p of listProducts">
           <div class="col-md-4">
       <!-- <div *ngIf="title.toLowerCase() == c.title.toLowerCase() || title == ''" class="col-md-4" style="margin-bottom: 20px;"> -->
-          <app-category [t]="test" [data]="c" (d)="DeleteCategory($event)"></app-category>
+          <app-product></app-product>
           </div>
       </ng-container>
 
